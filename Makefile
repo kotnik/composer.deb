@@ -1,23 +1,17 @@
-VERSION=1.0.0-alpha7
+VERSION=1.0.0-alpha8
 
-default: composer package
+default: composer
 
 composer: clean
 	@curl -sS https://getcomposer.org/installer | php
-	@php composer.phar create-project composer/composer -s alpha debian/usr/share/composer $(VERSION)$
-	@mkdir -p debian/usr/bin
-	@ln -sf ../share/composer/bin/composer debian/usr/bin/composer
+	@php composer.phar create-project composer/composer -s alpha php5-composer $(VERSION)$
 
-package:
-	@fakeroot make finish
-
-finish:
-	@chown -R root:root debian
-	@dpkg-deb --build debian .
+install:
+	install -d $(DESTDIR)/usr/bin
+	ln -s /usr/share/php5-composer/bin/composer $(DESTDIR)/usr/bin/composer
 
 clean:
-	@rm -rf debian/usr
-	@rm -f *.deb
+	@rm -rf php5-composer/
 	@rm -f composer.phar
 
 .PHONY: default

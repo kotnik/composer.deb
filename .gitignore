@@ -1,3 +1,7 @@
 composer.phar
-*.deb
+php5-composer
+debian/files
+debian/php5-composer.debhelper.log
+debian/*.debhelper
+debian/*.substvars
 debian/usr
