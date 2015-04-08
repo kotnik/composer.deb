@@ -1,9 +1,8 @@
-VERSION=1.0.0-alpha9
 
 default: composer
 
 composer: clean
-	@curl -sS https://getcomposer.org/installer | php -- --version=$(VERSION)$
+	@curl -sS https://getcomposer.org/installer | php --
 	@cp --remove-destination composer.phar debian/usr/bin/composer
 
 install:

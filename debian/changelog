@@ -1,3 +1,9 @@
+php5-composer (1.0.0dev-20150329) unstable; urgency=low
+
+  * Version from f10c71475167a4661225b14560ca0a400d730829 snapshot..
+
+ -- Nikola Kotur <nikola@commerceguys.com>  Wed, 08 Apr 2015 11:23:28 +0200
+
 php5-composer (1.0.0-alpha9) unstable; urgency=low
 
   * Upgraded to 1.0.0-alpha9.
